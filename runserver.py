@@ -7,7 +7,6 @@
 from keras.models import model_from_json
 from keras.preprocessing import image
 from flask import Flask, request, jsonify
-from glob import glob
 import numpy as np
 import os
 from PIL import Image
@@ -23,8 +22,8 @@ app = Flask(__name__)
 model = None
 UPLOAD_FOLDER = "Uploaded"
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
-actress_names = [item.split("/")[-2] for item in sorted(glob("../Celebs/train/*/"))]
-
+# actress_names = [item.split("/")[-2] for item in sorted(glob("../Celebs/train/*/"))]
+actress_names = ["anushka","deepika","jaq","kat","priyanka"]
 
 # ## Load the model
 
@@ -37,7 +36,7 @@ def load_model(json_model):
     loaded_model_json = json_file.read()
     json_file.close()
     model = model_from_json(loaded_model_json)
-    model.load_weights('saved_models/weights.best.vgg19_2.hdf5')
+    model.load_weights('weights.best.vgg19_2.hdf5')
 
 
 # In[17]:
