@@ -90,6 +90,6 @@ https://github.com/keras-team/keras/issues/2397
 if __name__ == '__main__':
     load_model('new_model_66_test.json')
     graph = tf.get_default_graph()
-    app.run()
+    app.run(host="0.0.0.0")
 
 
