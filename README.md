@@ -38,3 +38,9 @@ Then follow steps 1,2,3,4 off course changing nvcr.io to either
 2) gcr
 3) docker hub
 4) private-registry
+
+FOR LOCALHOST
+
+docker tag celebrity:latest localhost:5000/celebrity:latest
+docker run -ti localhost:5000/celebrity:latest
+
