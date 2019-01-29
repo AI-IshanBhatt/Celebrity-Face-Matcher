@@ -17,5 +17,5 @@ spec:
         spec:
             containers: # List of containers running in each pod.
                 - name: celeb-matcher
-                  image: halwa.yellow.sophos:5000/celebrity:latest
+                  image: IP:5000/celebrity:latest
                   imagePullPolicy: Always
