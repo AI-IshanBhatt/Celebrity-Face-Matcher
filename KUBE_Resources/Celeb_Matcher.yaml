@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+    name: celeb-matcher # Name of the deployment.
+    namespace: celeb
+    labels:
+        app: celeb-matcher
+spec:
+    selector:
+        matchLabels:
+            app: celeb-matcher
+    replicas: 1 # Number of replica pods to run.
+    template: # Describes the pods that will be used for the deployment.
+        metadata:
+            labels: # Same labels are set for all pods.
+                app: celeb-matcher
+        spec:
+            containers: # List of containers running in each pod.
+                - name: celeb-matcher
+                  image: halwa.yellow.sophos:5000/celebrity:latest
+                  imagePullPolicy: Always

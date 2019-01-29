@@ -44,3 +44,17 @@ FOR LOCALHOST
 docker tag celebrity:latest localhost:5000/celebrity:latest
 docker run -ti localhost:5000/celebrity:latest
 
+KUBERNETES NOTES:-
+
+1) minikube start --docker-env HTTP_PROXY=$http_proxy --docker-env HTTPS_PROXY=$https_proxy --docker-env NO_PROXY=$no_proxy --insecure-registry MY_IP:5000
+2) kubectl create -f Celeb_Matcher_namespace.yaml
+3) kubectl create -f Celeb_Matcher.yaml
+4) kubectl get deployments --namespace=celeb (Need to run it to get name of deployment)
+5) kubectl expose deployment celeb-matcher --namespace=celeb --port=5000 --type=NodePort
+OR
+5) kubectl create -f Celeb_Matcher_service.yaml
+6) minikube ip -> <IP_ADDRESS>
+7) curl -X POST -F image=@anu2.jpg 'http://<IP_ADDESS>:30080/predict'
+
+More coming up for ClusterIP,LoadBalancer(Not supported in minikube), Ingress
+
