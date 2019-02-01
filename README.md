@@ -29,6 +29,12 @@ docker run -p 5000:5000 <IMAGE_ID>
 
 5) docker push nvcr.io/celebs:latest
 
+------------------------------Putting on dockerhub-------------------------
+docker login
+docker tag localhost:5000/celebrity:latest ishanbhatt/celebrity:latest
+docker push ishanbhatt/celebrity:latest
+
+
 nvcr allows you to pull the image
 So, your dockerfile will have
 FROM nvidia/cuda:8.0-cudnn6-devel-ubuntu16.04
