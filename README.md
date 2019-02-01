@@ -30,8 +30,11 @@ docker run -p 5000:5000 <IMAGE_ID>
 5) docker push nvcr.io/celebs:latest
 
 ------------------------------Putting on dockerhub-------------------------
+
 docker login
+
 docker tag localhost:5000/celebrity:latest ishanbhatt/celebrity:latest
+
 docker push ishanbhatt/celebrity:latest
 
 
