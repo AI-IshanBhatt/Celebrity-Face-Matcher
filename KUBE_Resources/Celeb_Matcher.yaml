@@ -3,12 +3,11 @@ kind: Deployment
 metadata:
     name: celeb-matcher # Name of the deployment.
     namespace: celeb
-    labels:
-        app: celeb-matcher
 spec:
     selector:
         matchLabels:
-            app: celeb-matcher
+            app: celeb-matcher  # all pods with celeb-matcher are part of this deployment, This must match with the pods name.
+                                # Here we are labeling all the pods with celeb-matcher, failing to specify it will create issue
     replicas: 1 # Number of replica pods to run.
     template: # Describes the pods that will be used for the deployment.
         metadata:
