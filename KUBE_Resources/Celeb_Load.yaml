@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: celeb-matcher-service
+  namespace: celeb
+  labels:
+    app: celeb-matcher
+spec:
+  type: LoadBalancer
+  ports:
+    - protocol: TCP
+      port: 8086
+      targetPort: 5000
+      name: http
+  selector:
+    app: celeb-matcher

@@ -16,5 +16,5 @@ spec:
         spec:
             containers: # List of containers running in each pod.
                 - name: celeb-matcher
-                  image: IP:5000/celebrity:latest
+                  image: ishanbhatt/celebrity:latest  # repo/image:tag
                   imagePullPolicy: Always
