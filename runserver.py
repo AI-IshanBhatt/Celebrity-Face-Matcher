@@ -2,7 +2,8 @@
 # coding: utf-8
 
 # In[22]:
-
+import signal
+import sys
 
 from keras.models import model_from_json
 from keras.preprocessing import image
@@ -15,8 +16,11 @@ import tensorflow as tf
 
 # # Here we will define globals
 
-# In[20]:
 
+# In[20]:
+def signal_handler(signum, frame):
+    print("Emulation of graceful termination")
+    sys.exit(0)
 
 app = Flask(__name__)
 model = None
@@ -89,6 +93,8 @@ https://github.com/keras-team/keras/issues/2397
 """
 if __name__ == '__main__':
     load_model('new_model_66_test.json')
+    signal.signal(signal.SIGINT, signal_handler)
+    signal.signal(signal.SIGTERM, signal_handler)
     graph = tf.get_default_graph()
     app.run(host="0.0.0.0")
 
