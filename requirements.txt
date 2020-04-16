@@ -39,6 +39,6 @@ requests-file==1.4.3
 requests-ftp==0.3.1
 
 tensorboard==1.10.0
-tensorflow==1.10.0
+tensorflow==1.15.2
 
 opencv-python==4.0.0.21
