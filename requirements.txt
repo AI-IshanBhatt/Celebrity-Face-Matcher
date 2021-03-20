@@ -22,7 +22,7 @@ greenlet==0.4.12
 
 gunicorn==19.9.0
 h5py==2.8.0
-Jinja2==2.9.6
+Jinja2==2.11.3
 
 jupyter==1.0.0
 jupyter-client==5.0.1
